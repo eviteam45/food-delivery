@@ -15,6 +15,8 @@ type Order = {
   items: string;
   id: string;
   image: string;
+  status?: "Completed" | "Canceled";
+  date?: string;
 };
 
 const ongoing: Order[] = [
@@ -24,8 +26,9 @@ const ongoing: Order[] = [
 ];
 
 const history: Order[] = [
-  { group: "Food", name: "Pizza Hut", price: "$35.25", items: "03 Items", id: "#162432", image: "/food/biryani.jpg" },
-  { group: "Drink", name: "McDonald", price: "$40.15", items: "02 Items", id: "#242432", image: "/food/sandwich.jpg" },
+  { group: "Food", name: "Pizza Hut", price: "$35.25", items: "03 Items", id: "#162432", image: "/food/biryani.jpg", status: "Completed", date: "29 JAN, 12:30" },
+  { group: "Drink", name: "McDonald", price: "$40.15", items: "02 Items", id: "#242432", image: "/food/sandwich.jpg", status: "Completed", date: "30 JAN, 12:30" },
+  { group: "Drink", name: "Starbucks", price: "$10.20", items: "01 Items", id: "#240112", image: "/food/dessert2.jpg", status: "Canceled", date: "30 JAN, 12:30" },
 ];
 
 export default function OrdersPage() {
@@ -65,20 +68,35 @@ export default function OrdersPage() {
       <div className="px-6">
         {data.map((o, i) => (
           <div key={i}>
-            <p className="mt-6 text-[16px] text-ink-2">{o.group}</p>
+            <p className="mt-6 text-[16px] text-ink-2">
+              {o.group}
+              {o.status && (
+                <span
+                  className={cn(
+                    "ml-6 font-bold",
+                    o.status === "Completed" ? "text-[#2AAB5B]" : "text-danger",
+                  )}
+                >
+                  {o.status}
+                </span>
+              )}
+            </p>
             <div className="mt-3 flex items-center gap-4 border-t border-line pt-4">
               <Thumb src={o.image} alt={o.name} className="h-[70px] w-[70px] rounded-[14px]" />
               <div className="flex-1">
-                <h3 className="text-[18px] font-bold text-ink">{o.name}</h3>
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-[18px] font-bold text-ink">{o.name}</h3>
+                  <span className="whitespace-nowrap text-[15px] text-ink-2 underline">
+                    {o.id}
+                  </span>
+                </div>
                 <p className="mt-1.5 text-[15px] text-ink-2">
                   <span className="font-bold">{o.price}</span>
                   <span className="mx-2 text-line">|</span>
+                  {o.date && <span className="text-muted-3">{o.date} • </span>}
                   <span className="text-muted-3">{o.items}</span>
                 </p>
               </div>
-              <span className="self-start text-[15px] text-ink-2 underline">
-                {o.id}
-              </span>
             </div>
 
             <div className="mt-4 flex gap-4">
@@ -98,13 +116,13 @@ export default function OrdersPage() {
                 <>
                   <Link
                     href="/reviews"
-                    className="flex h-[45px] flex-1 items-center justify-center rounded-[8px] bg-primary text-[14px] font-bold text-white"
+                    className="flex h-[45px] flex-1 items-center justify-center rounded-[8px] border border-primary text-[14px] font-bold text-primary"
                   >
                     Rate
                   </Link>
                   <Link
                     href="/home"
-                    className="flex h-[45px] flex-1 items-center justify-center rounded-[8px] border border-primary text-[14px] font-bold text-primary"
+                    className="flex h-[45px] flex-1 items-center justify-center rounded-[8px] bg-primary text-[14px] font-bold text-white"
                   >
                     Re-Order
                   </Link>

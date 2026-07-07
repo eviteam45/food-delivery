@@ -34,7 +34,7 @@ export default function FilterPage() {
   const router = useRouter();
   const [offers, setOffers] = useState<string[]>([]);
   const [time, setTime] = useState("10-15 min");
-  const [price, setPrice] = useState(1);
+  const [price, setPrice] = useState(2);
   const [rating, setRating] = useState(4);
 
   const toggle = (v: string) =>

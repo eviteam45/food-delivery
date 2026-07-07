@@ -46,7 +46,7 @@ export default function SellerDashboard() {
               className="rounded-[16px] bg-white px-5 py-6 shadow-[0_16px_34px_rgba(24,28,46,0.05)]"
             >
               <p className="text-[42px] font-extrabold leading-none text-ink">{s.n}</p>
-              <p className="caps-label mt-3 text-[14px] font-bold text-muted">{s.l}</p>
+              <p className="caps-label mt-3 whitespace-nowrap text-[13px] font-bold text-muted">{s.l}</p>
             </Link>
           ))}
         </div>

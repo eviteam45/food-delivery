@@ -74,7 +74,6 @@ function LoginForm() {
         <label className="flex items-center gap-2 text-[14px] text-muted-4">
           <input
             type="checkbox"
-            defaultChecked
             className="h-5 w-5 rounded-[6px] border border-line accent-primary"
           />
           Remember me

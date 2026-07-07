@@ -46,7 +46,7 @@ export const dishPhotos = [
 
 export const categories: Category[] = [
   { slug: "all", name: "All", tint: "#FFD27A", image: "/food/burger.jpg" },
-  { slug: "hot-dog", name: "Hot Dog", tint: "#F0F5FA", image: "/food/sandwich.jpg" },
+  { slug: "hot-dog", name: "Hot Dog", startingPrice: 30, tint: "#F0F5FA", image: "/food/sandwich.jpg" },
   { slug: "burger", name: "Burger", startingPrice: 50, tint: "#F0F5FA", image: "/food/burger.jpg" },
   { slug: "pizza", name: "Pizza", startingPrice: 70, tint: "#F0F5FA", image: "/food/pizza.jpg" },
   { slug: "sandwich", name: "Sandwich", startingPrice: 40, tint: "#F0F5FA", image: "/food/sandwich.jpg" },

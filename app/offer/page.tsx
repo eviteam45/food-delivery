@@ -24,19 +24,23 @@ export default function OfferPage() {
 
           {/* confetti */}
           {[
-            "left-8 top-24 rotate-12",
-            "right-10 top-28 -rotate-12",
-            "left-16 top-44 rotate-45",
-            "right-20 top-52 rotate-6",
-          ].map((c, i) => (
+            { c: "left-6 top-20 rotate-12", s: "h-4 w-4 bg-white/80" },
+            { c: "right-8 top-24 -rotate-12", s: "h-5 w-5 bg-white/70" },
+            { c: "left-14 top-40 rotate-45", s: "h-3 w-3 bg-white/60" },
+            { c: "right-16 top-48 rotate-6", s: "h-4 w-4 bg-white/80" },
+            { c: "left-24 top-16 -rotate-45", s: "h-2.5 w-2.5 bg-white/60" },
+            { c: "right-24 top-44 rotate-12", s: "h-3 w-3 bg-white/70" },
+          ].map((t, i) => (
             <span
               key={i}
-              className={`absolute h-3 w-3 border-2 border-white/40 ${c}`}
+              className={`absolute ${t.s} ${t.c}`}
               style={{ clipPath: "polygon(50% 0, 100% 100%, 0 100%)" }}
             />
           ))}
+          <span className="absolute left-10 top-32 h-6 w-6 rounded-full border-2 border-white/50" />
+          <span className="absolute right-12 top-36 h-3 w-3 rounded-full bg-white/60" />
 
-          <h1 className="mt-6 text-[46px] font-extrabold leading-none text-white drop-shadow">
+          <h1 className="mt-6 whitespace-nowrap text-[40px] font-extrabold leading-none text-white drop-shadow">
             Hurry Offers!
           </h1>
           <p className="mt-8 text-[34px] font-extrabold tracking-wide text-white">

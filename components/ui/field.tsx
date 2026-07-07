@@ -39,7 +39,7 @@ export function Field({ label, password, className, type, error, ...props }: Fie
             aria-label={show ? "Hide password" : "Show password"}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-4"
           >
-            {show ? <Eye className="h-5 w-5" /> : <EyeOff className="h-5 w-5" />}
+            {show ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
         )}
       </div>

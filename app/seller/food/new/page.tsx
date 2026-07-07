@@ -29,7 +29,7 @@ const basic = [
   { icon: Drumstick, label: "Chicken", on: false },
   { icon: Bean, label: "Onion", on: true },
   { icon: Nut, label: "Garlic", on: false },
-  { icon: Flame, label: "Pappers", on: true },
+  { icon: Flame, label: "Peppers", on: true },
   { icon: Carrot, label: "Ginger", on: false },
 ];
 const fruit = [
@@ -112,10 +112,10 @@ export default function AddNewItemsPage() {
         </div>
 
         <p className="caps-label mt-7 text-[14px] text-ink-2">Price</p>
-        <div className="mt-3 flex items-center gap-6">
+        <div className="mt-3 flex items-center gap-5">
           <input
             placeholder="$50"
-            className="h-[62px] w-[150px] rounded-[10px] border border-line px-5 text-[15px] text-ink placeholder:text-muted-3 focus:outline-none"
+            className="h-[62px] w-[130px] shrink-0 rounded-[10px] border border-line px-5 text-[15px] text-ink placeholder:text-muted-3 focus:outline-none"
           />
           <Checkbox label="Pick up" checked={pickup} onChange={() => setPickup((v) => !v)} />
           <Checkbox label="Delivery" checked={delivery} onChange={() => setDelivery((v) => !v)} />
@@ -180,7 +180,7 @@ function Checkbox({
       >
         <Check className="h-4 w-4" strokeWidth={3} />
       </span>
-      <span className="text-[16px] text-ink-2">{label}</span>
+      <span className="whitespace-nowrap text-[16px] text-ink-2">{label}</span>
     </button>
   );
 }

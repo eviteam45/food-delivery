@@ -47,6 +47,19 @@ export function AppleIcon({ className }: IconProps) {
   );
 }
 
+/** Facebook Messenger glyph (filled bubble with the swoosh cut out). */
+export function MessengerIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={cn("h-6 w-6", className)}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 2C6.477 2 2 6.145 2 11.259c0 2.913 1.454 5.512 3.726 7.21V22l3.405-1.869c.909.252 1.871.388 2.869.388 5.523 0 10-4.145 10-9.26C22 6.145 17.523 2 12 2Zm1.008 12.461-2.546-2.717-4.97 2.717 5.467-5.804 2.608 2.717 4.907-2.717-5.476 5.804Z"
+      />
+    </svg>
+  );
+}
+
 /** Small utensils mark used for restaurant chips. */
 export function DishMark({ className }: IconProps) {
   return (

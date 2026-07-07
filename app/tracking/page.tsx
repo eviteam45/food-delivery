@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ChevronLeft, MapPin, Phone, MessageSquare } from "lucide-react";
+import { ChevronLeft, MapPin, Phone } from "lucide-react";
 import { Thumb } from "@/components/ui/thumb";
+import { MessengerIcon } from "@/components/icons";
 import { OrderStatusTimeline } from "@/components/app/order-status-timeline";
 import { avatar } from "@/data/menu";
 
@@ -92,17 +93,17 @@ export default function TrackingPage() {
 
         {/* courier */}
         <div className="mt-6 flex items-center gap-4 border-t border-line pt-5">
-          <Thumb src={avatar(3)} alt="Robert Fox" className="h-[50px] w-[50px] rounded-full" />
+          <Thumb src={avatar(3)} alt="Robert F." className="h-[50px] w-[50px] rounded-full" />
           <div className="flex-1">
-            <p className="text-[16px] font-bold text-ink">Robert Fox</p>
-            <p className="text-[14px] text-muted">Delivery Guy</p>
+            <p className="text-[16px] font-bold text-ink">Robert F.</p>
+            <p className="text-[14px] text-muted">Courier</p>
           </div>
           <Link
             href="/chat"
             aria-label="Message"
-            className="flex h-[45px] w-[45px] items-center justify-center rounded-full bg-surface text-primary"
+            className="flex h-[45px] w-[45px] items-center justify-center rounded-full border border-primary/40 bg-white text-primary"
           >
-            <MessageSquare className="h-5 w-5" />
+            <MessengerIcon className="h-5 w-5" />
           </Link>
           <Link
             href="/call"

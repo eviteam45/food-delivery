@@ -1,7 +1,15 @@
 import Link from "next/link";
 import { ChevronLeft, MapPin, Phone, MessageSquare } from "lucide-react";
 import { Thumb } from "@/components/ui/thumb";
+import { OrderStatusTimeline } from "@/components/app/order-status-timeline";
 import { avatar } from "@/data/menu";
+
+const trackingSteps = [
+  "Your order has been received",
+  "The restaurant is preparing your food",
+  "Your order has been picked up for delivery",
+  "Order arriving soon!",
+];
 
 export default function TrackingPage() {
   return (
@@ -18,7 +26,7 @@ export default function TrackingPage() {
       </header>
 
       {/* map + route */}
-      <div className="relative flex-1">
+      <div className="relative min-h-[300px] flex-1 overflow-hidden">
         <svg
           className="absolute inset-0 h-full w-full"
           viewBox="0 0 390 620"
@@ -43,7 +51,7 @@ export default function TrackingPage() {
           <circle cx="285" cy="172" r="9" fill="#fff" stroke="#FFC529" strokeWidth="4" />
         </svg>
         {/* destination pin */}
-        <div className="absolute left-[60px] top-[420px] flex h-[100px] w-[100px] items-center justify-center rounded-full bg-danger text-white shadow-lg">
+        <div className="absolute bottom-8 left-[52px] flex h-[92px] w-[92px] items-center justify-center rounded-full bg-danger text-white shadow-lg">
           <MapPin className="h-8 w-8 fill-white/20" />
         </div>
       </div>
@@ -68,6 +76,19 @@ export default function TrackingPage() {
             <span className="font-bold">4x</span> Sanwitch
           </p>
         </div>
+
+        {/* estimated delivery time */}
+        <div className="mt-7 text-center">
+          <p className="text-[34px] font-extrabold leading-none text-ink">
+            20 min
+          </p>
+          <p className="caps-label mt-2 text-[15px] font-medium tracking-wide text-muted-3">
+            Estimated Delivery Time
+          </p>
+        </div>
+
+        {/* order status */}
+        <OrderStatusTimeline steps={trackingSteps} current={1} className="mt-7" />
 
         {/* courier */}
         <div className="mt-6 flex items-center gap-4 border-t border-line pt-5">

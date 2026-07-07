@@ -1,21 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
 import { Field } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/store/auth";
+import { useHydrated } from "@/lib/use-hydrated";
 
 export default function AddCardPage() {
   const router = useRouter();
   const currentUser = useAuth((s) => s.user);
-  const [holder, setHolder] = useState("");
+  const hydrated = useHydrated();
 
-  // Prefill with the signed-in user's name after mount (keeps SSR markup stable).
-  useEffect(() => {
-    if (currentUser?.name) setHolder(currentUser.name);
-  }, [currentUser]);
+  // Prefill with the signed-in user's name once the persisted store hydrates,
+  // then track edits. Deriving (rather than syncing in an effect) keeps the SSR
+  // markup stable and avoids a hydration mismatch.
+  const [edited, setEdited] = useState<string | null>(null);
+  const holder = edited ?? (hydrated ? currentUser?.name ?? "" : "");
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-white">
@@ -41,7 +43,7 @@ export default function AddCardPage() {
           <Field
             label="Card Holder Name"
             value={holder}
-            onChange={(e) => setHolder(e.target.value)}
+            onChange={(e) => setEdited(e.target.value)}
             placeholder="Your name"
           />
           <Field label="Card Number" placeholder="2134 ____ ____ ____" />

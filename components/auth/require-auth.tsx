@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/store/auth";
+import { useHydrated } from "@/lib/use-hydrated";
 
 /** Redirects to /login (remembering where to return) when no user is signed in.
  * Waits for the persisted store to hydrate on the client before deciding, so a
@@ -10,9 +11,7 @@ import { useAuth } from "@/store/auth";
 export function useRequireAuth(next: string) {
   const router = useRouter();
   const user = useAuth((s) => s.user);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => setReady(true), []);
+  const ready = useHydrated();
 
   useEffect(() => {
     if (ready && !user) {

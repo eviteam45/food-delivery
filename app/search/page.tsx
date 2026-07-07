@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { IconButton } from "@/components/ui/icon-button";
 import { SearchBar } from "@/components/app/search-bar";

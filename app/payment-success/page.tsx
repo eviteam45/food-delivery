@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Thumb } from "@/components/ui/thumb";
+import { SuccessGraphic } from "@/components/brand/success-graphic";
 import { useCart } from "@/store/cart";
 import { RequireAuth } from "@/components/auth/require-auth";
 
@@ -25,7 +25,7 @@ function PaymentSuccessInner() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-white px-8 text-center">
-      <Thumb className="h-[240px] w-[300px] rounded-[24px]" />
+      <SuccessGraphic className="w-[280px]" />
       <h1 className="mt-10 text-[30px] font-extrabold text-ink">
         Congratulations!
       </h1>

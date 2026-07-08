@@ -24,12 +24,12 @@ export default function OfferPage() {
 
           {/* confetti */}
           {[
-            { c: "left-6 top-20 rotate-12", s: "h-4 w-4 bg-white/80" },
-            { c: "right-8 top-24 -rotate-12", s: "h-5 w-5 bg-white/70" },
-            { c: "left-14 top-40 rotate-45", s: "h-3 w-3 bg-white/60" },
-            { c: "right-16 top-48 rotate-6", s: "h-4 w-4 bg-white/80" },
-            { c: "left-24 top-16 -rotate-45", s: "h-2.5 w-2.5 bg-white/60" },
-            { c: "right-24 top-44 rotate-12", s: "h-3 w-3 bg-white/70" },
+            { c: "left-6 top-20 rotate-12", s: "h-4 w-4 bg-[#ffd24a]" },
+            { c: "right-8 top-24 -rotate-12", s: "h-5 w-5 bg-[#ffdd72]" },
+            { c: "left-14 top-40 rotate-45", s: "h-3 w-3 bg-[#ffce3d]" },
+            { c: "right-16 top-48 rotate-6", s: "h-4 w-4 bg-[#ffe38f]" },
+            { c: "left-24 top-16 -rotate-45", s: "h-2.5 w-2.5 bg-[#ffdd72]" },
+            { c: "right-24 top-44 rotate-12", s: "h-3 w-3 bg-[#ffce3d]" },
           ].map((t, i) => (
             <span
               key={i}
@@ -38,7 +38,21 @@ export default function OfferPage() {
             />
           ))}
           <span className="absolute left-10 top-32 h-6 w-6 rounded-full border-2 border-white/50" />
-          <span className="absolute right-12 top-36 h-3 w-3 rounded-full bg-white/60" />
+          <span className="absolute left-20 top-52 h-2.5 w-2.5 rounded-full bg-[#ffe38f]" />
+          {/* squiggle */}
+          <svg
+            className="absolute right-4 top-40 h-11 w-6 text-[#ffdd72]"
+            viewBox="0 0 16 40"
+            fill="none"
+            aria-hidden
+          >
+            <path
+              d="M8 3 C 2 9, 14 13, 8 19 C 2 25, 14 29, 8 35"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </svg>
 
           <h1 className="mt-6 whitespace-nowrap text-[40px] font-extrabold leading-none text-white drop-shadow">
             Hurry Offers!

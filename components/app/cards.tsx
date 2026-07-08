@@ -85,7 +85,7 @@ export function SuggestRow({
         <h3 className="text-[16px] text-ink-2">{name}</h3>
         <span className="mt-1 flex items-center gap-1.5 text-[14px] font-bold text-ink">
           <Star className="h-4 w-4 fill-primary text-primary" />
-          {rating}
+          {rating.toFixed(1)}
         </span>
       </div>
     </Link>

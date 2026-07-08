@@ -26,7 +26,10 @@ export default function AddAddressPage() {
           <span className="rounded-[8px] bg-ink px-4 py-2 text-[14px] text-white">
             Move to edit location
           </span>
-          <span className="mt-2 h-2 w-2 rotate-45 bg-ink" />
+          <span
+            className="-mt-px h-2 w-3 bg-ink"
+            style={{ clipPath: "polygon(0 0, 100% 0, 50% 100%)" }}
+          />
           <span className="mt-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary ring-8 ring-primary/15" />
         </div>
       </div>
@@ -53,11 +56,11 @@ export default function AddAddressPage() {
           </label>
 
           <div className="flex gap-4">
-            <Field label="Street" defaultValue="Hason Nagar" className="w-full" />
-            <Field label="Post Code" defaultValue="34567" className="w-full" />
+            <Field label="Street" placeholder="Hason Nagar" className="w-full" />
+            <Field label="Post Code" placeholder="34567" className="w-full" />
           </div>
 
-          <Field label="Appartment" defaultValue="345" />
+          <Field label="Appartment" placeholder="345" />
 
           <div>
             <span className="caps-label mb-3 block text-[13px] font-medium text-ink-2">

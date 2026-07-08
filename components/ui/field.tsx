@@ -8,9 +8,19 @@ type FieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   password?: boolean;
   error?: string;
+  /** Show the eye-off (slashed) glyph while the password is masked. */
+  eyeOffWhenHidden?: boolean;
 };
 
-export function Field({ label, password, className, type, error, ...props }: FieldProps) {
+export function Field({
+  label,
+  password,
+  eyeOffWhenHidden,
+  className,
+  type,
+  error,
+  ...props
+}: FieldProps) {
   const [show, setShow] = useState(false);
   const inputType = password ? (show ? "text" : "password") : type;
   return (
@@ -39,7 +49,11 @@ export function Field({ label, password, className, type, error, ...props }: Fie
             aria-label={show ? "Hide password" : "Show password"}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-4"
           >
-            {show ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            {(eyeOffWhenHidden ? !show : show) ? (
+              <EyeOff className="h-5 w-5" />
+            ) : (
+              <Eye className="h-5 w-5" />
+            )}
           </button>
         )}
       </div>

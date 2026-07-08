@@ -70,7 +70,8 @@ export default function SignUpPage() {
         <Field
           label="Password"
           password
-          placeholder="••••••••••"
+          eyeOffWhenHidden
+          placeholder="* * * * * * * * * *"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           error={errors.password}
@@ -78,7 +79,8 @@ export default function SignUpPage() {
         <Field
           label="Re-Type Password"
           password
-          placeholder="••••••••••"
+          eyeOffWhenHidden
+          placeholder="* * * * * * * * * *"
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
           error={errors.confirm}

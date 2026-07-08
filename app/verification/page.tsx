@@ -53,7 +53,7 @@ export default function VerificationPage() {
             inputMode="numeric"
             value={d}
             onChange={(e) => setDigit(i, e.target.value)}
-            className="h-[62px] w-[62px] rounded-[10px] bg-surface text-center text-[24px] font-bold text-ink focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="h-[72px] w-[72px] rounded-[14px] bg-surface text-center text-[26px] font-bold text-ink focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
         ))}
       </div>

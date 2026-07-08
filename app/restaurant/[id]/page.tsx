@@ -1,8 +1,9 @@
+import { MoreHorizontal } from "lucide-react";
 import { ScreenHeader } from "@/components/ui/screen-header";
+import { IconButton } from "@/components/ui/icon-button";
 import { Thumb } from "@/components/ui/thumb";
 import { RatingRow } from "@/components/ui/rating-row";
 import { RestaurantMenu } from "@/components/app/restaurant-menu";
-import { CartButton } from "@/components/app/cart-button";
 import { getRestaurant, foods } from "@/data/menu";
 
 export default async function RestaurantPage({
@@ -18,7 +19,11 @@ export default async function RestaurantPage({
       <ScreenHeader
         title="Restaurant View"
         back="/home"
-        right={<CartButton />}
+        right={
+          <IconButton aria-label="More">
+            <MoreHorizontal className="h-6 w-6" />
+          </IconButton>
+        }
       />
 
       <div className="px-6">

@@ -46,7 +46,7 @@ export default function ProfilePage() {
       />
 
       <div className="mt-8 flex items-center gap-5 px-6">
-        <Thumb src={user?.avatar || avatar(5)} alt={name} className="h-[100px] w-[100px] rounded-full" />
+        <Thumb src={user?.avatar || avatar(5)} alt={name} className="h-[112px] w-[112px] shrink-0 rounded-full" />
         <div>
           <h2 className="text-[24px] font-bold text-ink">{name}</h2>
           <p className="mt-1 text-[16px] text-muted">{user?.bio || "I love fast food"}</p>

@@ -68,13 +68,30 @@ function PaymentInner() {
         {/* saved card or empty state */}
         {empty ? (
           <div className="mt-6 rounded-[16px] bg-surface px-6 py-8 text-center">
-            <div className="mx-auto h-[180px] w-[280px] overflow-hidden rounded-[16px] bg-gradient-to-br from-[#ff8a3c] to-[#ff6a1a]">
-              <div className="mt-8 ml-6 flex gap-1">
-                <span className="h-6 w-6 rounded-full bg-red-500/90" />
-                <span className="-ml-3 h-6 w-6 rounded-full bg-white/80" />
+            <div className="relative mx-auto h-[190px] w-[290px] overflow-hidden rounded-[18px] bg-gradient-to-br from-[#ff9247] to-[#ff6b1c]">
+              {/* geometric accents */}
+              <span
+                className="absolute -top-8 right-10 h-[280px] w-14 rotate-[40deg] bg-[#ea3b2f]"
+                aria-hidden
+              />
+              <span
+                className="absolute bottom-3 right-16 h-11 w-11 bg-[#ffc42e]"
+                style={{ clipPath: "polygon(50% 0, 100% 100%, 0 100%)" }}
+                aria-hidden
+              />
+              <span
+                className="absolute -bottom-6 -right-6 h-20 w-20 rotate-45 bg-white/95"
+                aria-hidden
+              />
+
+              {/* mastercard logo */}
+              <div className="absolute left-6 top-7 flex">
+                <span className="h-7 w-7 rounded-full bg-[#ff4d4d]" />
+                <span className="-ml-3 h-7 w-7 rounded-full bg-white/85" />
               </div>
-              <div className="ml-6 mt-6 h-4 w-40 rounded bg-white/40" />
-              <div className="ml-6 mt-3 h-3 w-24 rounded bg-white/30" />
+              {/* placeholder number + name */}
+              <div className="absolute left-6 top-[96px] h-4 w-44 rounded bg-white/45" />
+              <div className="absolute left-6 top-[124px] h-3 w-24 rounded bg-white/35" />
             </div>
             <h3 className="mt-6 text-[18px] font-bold text-ink">
               No master card added

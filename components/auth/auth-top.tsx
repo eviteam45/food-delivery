@@ -50,7 +50,7 @@ export function AuthTop({
         {title}
       </h1>
       {subtitle && (
-        <p className="relative mx-auto mt-2 max-w-[280px] text-[16px] leading-6 text-white/70">
+        <p className="relative mx-auto mt-2 max-w-[340px] text-[16px] leading-6 text-white/70">
           {subtitle}
         </p>
       )}

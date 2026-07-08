@@ -58,7 +58,7 @@ function LoginForm() {
       <Field
         label="Password"
         password
-        placeholder="••••••••••"
+        placeholder="* * * * * * * * * *"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         error={errors.password}

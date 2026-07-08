@@ -46,7 +46,11 @@ export default function AddCardPage() {
             onChange={(e) => setEdited(e.target.value)}
             placeholder="Your name"
           />
-          <Field label="Card Number" placeholder="2134 ____ ____ ____" />
+          <Field
+            label="Card Number"
+            placeholder="2134 ____ ____ ____"
+            className="text-[18px] tracking-wider"
+          />
           <div className="flex gap-4">
             <Field label="Expire Date" placeholder="mm/yyyy" className="w-full" />
             <Field label="CVC" placeholder="***" className="w-full" />

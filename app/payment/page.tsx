@@ -89,8 +89,8 @@ function PaymentInner() {
               <p className="text-[16px] font-bold text-ink">Master Card</p>
               <div className="mt-3 flex items-center gap-3">
                 <MastercardMark className="h-5" />
-                <span className="whitespace-nowrap text-[14px] tracking-[0.2em] text-muted">
-                  ••••••••••
+                <span className="whitespace-nowrap text-[18px] tracking-[0.25em] text-muted-3">
+                  ************
                 </span>
                 <span className="ml-auto text-[16px] text-ink">436</span>
               </div>

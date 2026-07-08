@@ -5,11 +5,17 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const sparkles = [
-  "left-16 top-24 h-5 w-5 bg-peach-2",
-  "right-20 top-32 h-4 w-4 bg-primary",
-  "left-24 top-40 h-3 w-3 bg-primary",
-  "right-28 top-44 h-3 w-3 bg-primary",
-  "right-16 top-52 h-5 w-5 bg-peach-2",
+  "left-10 top-20 h-5 w-5 bg-peach-2",
+  "right-14 top-24 h-4 w-4 bg-primary",
+  "left-24 top-36 h-4 w-4 bg-primary",
+  "right-24 top-40 h-3.5 w-3.5 bg-primary",
+  "right-10 top-52 h-6 w-6 bg-peach-2",
+  "left-8 top-48 h-3 w-3 bg-primary",
+];
+
+const dots = [
+  "left-16 top-64 h-2.5 w-2.5 bg-peach-2",
+  "right-32 top-32 h-2 w-2 bg-peach-2",
 ];
 
 export default function WithdrawSuccessPage() {
@@ -23,6 +29,9 @@ export default function WithdrawSuccessPage() {
             className={`absolute ${s}`}
             style={{ clipPath: "polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)" }}
           />
+        ))}
+        {dots.map((d, i) => (
+          <span key={`dot-${i}`} className={`absolute rounded-full ${d}`} />
         ))}
         <div className="flex h-[130px] w-[130px] items-center justify-center rounded-full bg-primary">
           <Check className="h-16 w-16 text-white" strokeWidth={3} />

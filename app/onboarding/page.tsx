@@ -34,11 +34,11 @@ export default function OnboardingPage() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col items-center justify-between bg-white px-6 pb-10 pt-16">
-      <Thumb className="mt-6 h-[300px] w-[240px] rounded-[24px]" />
+      <Thumb className="mt-6 h-[340px] w-[280px] rounded-[24px]" />
 
       <div className="flex flex-col items-center text-center">
         <h1 className="text-[26px] font-extrabold text-ink">{slides[i].title}</h1>
-        <p className="mt-4 max-w-[300px] text-[16px] leading-6 text-muted-4">
+        <p className="mt-4 max-w-[340px] text-[16px] leading-6 text-muted-4">
           {slides[i].body}
         </p>
         <PageIndicator count={slides.length} active={i} className="mt-8" />

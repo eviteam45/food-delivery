@@ -9,7 +9,7 @@ export default function LocationPage() {
   const router = useRouter();
   return (
     <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-14 bg-white px-6 py-16">
-      <Thumb className="h-[420px] w-[300px] rounded-[150px]" />
+      <Thumb className="h-[260px] w-[214px] rounded-[75px]" />
 
       <div className="w-full">
         <Button onClick={() => router.push("/home")} className="justify-between">
